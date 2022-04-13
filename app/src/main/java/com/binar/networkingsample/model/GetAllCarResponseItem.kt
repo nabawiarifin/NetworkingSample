@@ -1,27 +1,30 @@
 package com.binar.networkingsample.model
 
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 data class GetAllCarResponseItem(
     @SerializedName("category")
-    val category: String,
+    val category: String? = null,
     @SerializedName("createdAt")
-    val createdAt: String,
+    val createdAt: String? = null,
     @SerializedName("finish_rent_at")
-    val finishRentAt: String,
+    val finishRentAt: String? = null,
     @SerializedName("id")
-    val id: Int,
+    val id: Int? = null,
     @SerializedName("image")
-    val image: String,
+    val image: String? = null,
     @SerializedName("name")
-    val name: String,
+    val name: String? = null,
     @SerializedName("price")
-    val price: Int,
+    val price: Int? = null,
     @SerializedName("start_rent_at")
-    val startRentAt: String,
+    val startRentAt: String? = null,
     @SerializedName("status")
-    val status: Boolean,
+    val status: Boolean? = null,
     @SerializedName("updatedAt")
-    val updatedAt: String
-)
+    val updatedAt: String? = null
+): Parcelable

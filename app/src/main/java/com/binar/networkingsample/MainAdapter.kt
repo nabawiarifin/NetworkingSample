@@ -3,6 +3,7 @@ package com.binar.networkingsample
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
@@ -49,6 +50,28 @@ class MainAdapter(private val onItemClick: OnClickListener) :
                 root.setOnClickListener {
                     onItemClick.onClickItem(data)
                 }
+
+                //Send Data to Second Fragment
+                binding.view.setOnClickListener {
+                    val item = GetAllCarResponseItem(
+                        name = data.name,
+                        category = data.category,
+                        createdAt = data.createdAt,
+                        finishRentAt = data.finishRentAt,
+                        id = data.id,
+                        image = data.image,
+                        price = data.price,
+                        startRentAt = data.startRentAt,
+                        status = data.status,
+                        updatedAt = data.updatedAt
+                    )
+
+                    it.findNavController().navigate(MainFragmentDirections.actionMainFragmentToSecondFragment(item))
+
+
+                }
+
+
             }
         }
     }

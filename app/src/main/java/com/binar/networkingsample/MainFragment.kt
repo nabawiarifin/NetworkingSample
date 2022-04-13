@@ -30,6 +30,7 @@ class MainFragment : Fragment() {
         fetchAllData()
     }
 
+    //Shows if fetching data is successful or not
     private fun fetchAllData() {
         CarsApi.retrofitService.allCar()
             .enqueue(object: Callback<List<GetAllCarResponseItem>>{
@@ -54,6 +55,7 @@ class MainFragment : Fragment() {
             })
     }
 
+    //Inputs the data into recyclerView
     private fun showList(data: List<GetAllCarResponseItem>?) {
         val adapter = MainAdapter(object: MainAdapter.OnClickListener{
             override fun onClickItem(data: GetAllCarResponseItem) {

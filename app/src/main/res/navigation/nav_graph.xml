@@ -18,5 +18,9 @@
         android:id="@+id/secondFragment"
         android:name="com.binar.networkingsample.SecondFragment"
         android:label="fragment_second"
-        tools:layout="@layout/fragment_second" />
+        tools:layout="@layout/fragment_second" >
+        <argument
+            android:name="items"
+            app:argType="com.binar.networkingsample.model.GetAllCarResponseItem" />
+    </fragment>
 </navigation>
